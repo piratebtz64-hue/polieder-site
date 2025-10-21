@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Polieder - Experts en sablage, métallisation, thermolaquage et plastification peinture. Solutions de traitement de surface de haute qualité pour les professionnels.">
+    <meta name="keywords" content="sablage, métallisation, thermolaquage, plastification peinture, traitement de surface, protection des métaux, finition industrielle">
+    <title>Polieder - Experts en Traitement de Surface</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset et base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Open Sans', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* Header */
+        .top-banner {
+            background: linear-gradient(135deg, #e74c3c, #d35400);
+            color: white;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 0.9em;
+        }
+        .top-banner a {
+            color: white;
+            font-weight: 600;
+        }
+        header {
+            background-color: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        .logo img {
+            height: 60px;
+            transition: all 0.3s;
+        }
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+        .nav-links a {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            color: #2c3e50;
+            transition: all 0.3s;
+            position: relative;
+        }
+        .nav-links a:hover {
+            color: #f39c12;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #f39c12;
+            transition: width 0.3s;
+        }
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        .btn-header {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white !important;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.2);
+        }
+        .btn-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
+        }
+        .mobile-menu-btn { display: none; }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 180px 0;
+            position: relative;
+        }
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4em;
+            margin-bottom: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        .hero-content p {
+            font-size: 1.4em;
+            margin-bottom: 30px;
+            font-weight: 300;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+        .btn {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(243, 156, 18, 0.2);
+        }
+        .btn.outline {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            box-shadow: none;
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(243, 156, 18, 0.3);
+        }
+        .btn.outline:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* Services Section */
+        #services {
+            padding: 100px 0;
+            background-color: white;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            color: #2c3e50;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .service-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .service-card:hover img {
+            transform: scale(1.05);
+        }
+        .service-card-content {
+            padding: 30px;
+            text-align: center;
+        }
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+        }
+        .service-card p {
+            color: #666;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        /* About Section */
+        #about {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        .about-text { flex: 1; }
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .about-image img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s;
+        }
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 100px 0;
+            background-color: white;
+        }
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        .project-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 30px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s;
+        }
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+        .project-overlay h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5em;
+            color: #f39c12;
+            opacity: 0.1;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+        }
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-weight: 400;
+            line-height: 1.8;
+        }
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .testimonial-author img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .testimonial-author-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .testimonial-author-info p {
+            color: #666;
+            font-style: normal;
+            margin: 0;
+        }
+
+        /* FAQ Section */
+        #faq {
+            padding: 100px 0;
+            background-color: white;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .faq-question {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            color: #2c3e50;
+        }
+        .faq-answer {
+            display: none;
+            padding-top: 15px;
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 100px 0;
+            background-color: #f8f9fa;
+        }
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: border 0.3s;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: #f39c12;
+            outline: none;
+        }
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 50px 0 20px;
+        }
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        .footer-links a {
+            color: #f39c12;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .hero-content h1 { font-size: 2.8em; }
+            .about-content { flex-direction: column; }
+            .section-title { font-size: 2em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-banner">
+        <i class="fas fa-fire"></i> <strong>Devis gratuit sous 24h</strong> - Appelez-nous : <a href="tel:+33559031234">05 59 03 12 34</a>
+    </div>
+
+    <header>
+        <nav class="container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/200x60?text=Polieder+Logo" alt="Polieder Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projets</a></li>
+                <li><a href="#about">À Propos</a></li>
+                <li><a href="#contact" class="btn-header">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">☰</div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="accueil" class="hero">
+            <div class="hero-content container">
+                <h1>Polieder</h1>
+                <p>Spécialistes en traitements de surface depuis plus de 15 ans, offrant des solutions de sablage, métallisation, thermolaquage et plastification de la plus haute qualité pour les professionnels exigeants.</p>
+                <div class="cta-group">
+                    <a href="#contact" class="btn">Devis express</a>
+                    <a href="#services" class="btn outline">Nos services</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="container">
+            <h2 class="section-title">Nos Prestations d'Excellence</h2>
+            <div class="service-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Sablage">
+                    <div class="service-card-content">
+                        <h3>Sablage</h3>
+                        <p>Nettoyage et préparation des surfaces métalliques avec une précision inégalée pour une adhérence parfaite des revêtements ultérieurs.</p>
+                        <a href="#" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Métallisation">
+                    <div class="service-card-content">
+                        <h3>Métallisation</h3>
+                        <p>Application de couches métalliques protectrices pour une résistance exceptionnelle à la corrosion et à l'usure, adaptée aux environnements les plus exigeants.</p>
+                        <a href="#" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Thermolaquage">
+                    <div class="service-card-content">
+                        <h3>Thermolaquage</h3>
+                        <p>Revêtement en poudre polymérisée par chaleur, offrant une finition esthétique, écologique et de haute qualité avec une durabilité exceptionnelle.</p>
+                        <a href="#" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Plastification">
+                    <div class="service-card-content">
+                        <h3>Plastification</h3>
+                        <p>Enrobage plastique sur mesure pour une isolation électrique optimale et une protection contre les agressions chimiques et mécaniques.</p>
+                        <a href="#" class="btn">En savoir plus</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="container">
+            <h2 class="section-title">Nos Projets Réalisés</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Projet Industriel">
+                    <div class="project-overlay">
+                        <h3>Projet Industriel</h3>
+                        <p>Traitement de surface complet pour une structure métallique industrielle de grande envergure.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Projet Automobile">
+                    <div class="project-overlay">
+                        <h3>Projet Automobile</h3>
+                        <p>Thermolaquage de pièces automobiles pour une finition durable et résistante aux intempéries.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Projet de Construction">
+                    <div class="project-overlay">
+                        <h3>Projet de Construction</h3>
+                        <p>Protection contre la corrosion pour des structures en acier dans un environnement marin.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Projet Électrique">
+                    <div class="project-overlay">
+                        <h3>Projet Électrique</h3>
+                        <p>Plastification de composants électriques pour une isolation optimale dans des conditions extrêmes.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials" class="container">
+            <h2 class="section-title">Témoignages Clients</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p>"Polieder a fait un travail exceptionnel sur nos pièces métalliques. La qualité du sablage et du thermolaquage est impeccable, et leur professionnel est inégalé. Nous sommes très satisfaits de leur service et les recommandons sans hésitation."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60?text=JD" alt="Jean Dupont">
+                        <div class="testimonial-author-info">
+                            <h4>Jean Dupont</h4>
+                            <p>Directeur, Entreprise XYZ</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Le travail de Polieder sur nos structures en acier a dépassé nos attentes. Leur attention aux détails et leur respect des délais sont remarquables. Une entreprise que nous continuerons à utiliser pour nos projets futurs."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60?text=ML" alt="Marie Lefèvre">
+                        <div class="testimonial-author-info">
+                            <h4>Marie Lefèvre</h4>
+                            <p>Responsable des Achats, ABC Corp</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Nous avons été impressionnés par la rapidité et la qualité du travail de Polieder. Leur équipe est très professionnelle et toujours prête à aller au-delà pour satisfaire leurs clients. Un partenaire de confiance."</p>
+                    <div class="testimonial-author">
+                        <img src="https://via.placeholder.com/60x60?text=PR" alt="Pierre Roche">
+                        <div class="testimonial-author-info">
+                            <h4>Pierre Roche</h4>
+                            <p>Chef de Projet, DEF Industries</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq" class="container">
+            <h2 class="section-title">Questions Fréquentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Quels sont les avantages du thermolaquage par rapport à la peinture traditionnelle ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Le thermolaquage offre une finition plus durable et résistante aux intempéries par rapport à la peinture traditionnelle. Il est également plus écologique car il n'utilise pas de solvants et produit moins de déchets.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Combien de temps dure la protection offerte par la métallisation ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        La protection offerte par la métallisation peut durer jusqu'à 25 ans, selon les conditions d'utilisation et l'environnement. C'est une solution idéale pour les structures exposées à des conditions difficiles.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Quels types de métaux peuvent être traités par sablage ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Le sablage peut être appliqué à une large gamme de métaux, y compris l'acier, l'aluminium, le cuivre et bien d'autres. Notre équipe peut vous conseiller sur la meilleure solution pour votre projet spécifique.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Proposez-vous des solutions sur mesure pour des projets spécifiques ?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        Absolument. Nous travaillons en étroite collaboration avec nos clients pour développer des solutions sur mesure qui répondent à leurs besoins spécifiques et à leurs exigences techniques.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">À Propos de Polieder</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Fondée il y a plus de 15 ans, Polieder est une entreprise familiale dédiée aux traitements de surface de haute qualité. Nous combinons une expertise artisanale avec des technologies modernes pour servir les secteurs industriels, de la construction à l'automobile.</p>
+                        <p>Notre engagement envers la qualité irréprochable, le respect de l'environnement et la satisfaction client nous a permis de devenir un leader dans notre domaine. Chaque projet est traité avec le plus grand soin et une attention particulière aux détails.</p>
+                        <p>Notre équipe d'experts est toujours à la pointe des dernières innovations en matière de traitement de surface, garantissant des résultats exceptionnels pour nos clients.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="Notre équipe">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Contactez-Nous</h2>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="nom">Nom*</label>
+                        <input type="text" id="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email*</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Téléphone</label>
+                        <input type="tel" id="telephone">
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service souhaité*</label>
+                        <select id="service" required>
+                            <option value="">-- Sélectionnez --</option>
+                            <option value="sablage">Sablage</option>
+                            <option value="metallisation">Métallisation</option>
+                            <option value="thermolaquage">Thermolaquage</option>
+                            <option value="plastification">Plastification</option>
+                            <option value="autre">Autre</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message*</label>
+                        <textarea id="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Envoyer le message</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Mentions légales</a>
+                <a href="#">Conditions générales</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Plan du site</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Polieder. Tous droits réservés.</p>
+                <p>Adresse : 6 rue Lazaret, 64600 Anglet, France | Téléphone : 05 59 03 12 34 | Email : contact@polieder.fr</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre message ! Nous vous contacterons sous peu.');
+        });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', function() {
+                const answer = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                } else {
+                    // Close all other answers
+                    document.querySelectorAll('.faq-answer').forEach(a => a.style.display = 'none');
+                    document.querySelectorAll('.faq-question i').forEach(i => {
+                        i.classList.remove('fa-chevron-up');
+                        i.classList.add('fa-chevron-down');
+                    });
+                    // Open this answer
+                    answer.style.display = 'block';
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                }
+            });
+        });
+
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
