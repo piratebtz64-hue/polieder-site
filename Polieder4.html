@@ -5,10 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Site de Polieder - Portfolio et projets pirates">
     <meta name="keywords" content="Polieder, web, design, pirate, BTZ">
-    <title>Polieder - Portfolio Pirate</title>
+    <title>Polieder Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Reset et base */
+        /* Reset et base (ton code exact + extensions) */
         * {
             margin: 0;
             padding: 0;
@@ -117,6 +117,15 @@
             margin-bottom: 1rem;
         }
 
+        /* Contact */
+        #contact {
+            background: #f9f9f9;
+        }
+        #contact p {
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -124,6 +133,10 @@
             background: #000;
             color: white;
             margin-top: 2rem;
+        }
+        footer a {
+            color: #ff6b6b;
+            text-decoration: none;
         }
 
         /* Responsive */
@@ -170,43 +183,47 @@
         <section id="projet" class="projects">
             <h2>Mes Projets Pirates</h2>
             <div class="project-grid">
-                <!-- Exemple de projet 1 -->
+                <!-- Projet 1 -->
                 <div class="project-card">
                     <img src="https://via.placeholder.com/300x200/1e3c72/ffffff?text=PirateBTZ64-Hue" alt="Aperçu PirateBTZ64-Hue">
                     <h3>PirateBTZ64-Hue</h3>
-                    <p>Un site HTML/CSS avec des teintes pirates, prêt à naviguer sur les sept mers du web.</p>
+                    <p>Un site HTML/CSS avec des teintes pirates, prêt à naviguer sur les sept mers du web. Thème bleu-noir pour l'aventure !</p>
                 </div>
-                <!-- Exemple de projet 2 -->
+                <!-- Projet 2 -->
                 <div class="project-card">
                     <img src="https://via.placeholder.com/300x200/ff6b6b/ffffff?text=Projet+2" alt="Aperçu Projet 2">
                     <h3>Trésor Numérique</h3>
-                    <p>Un portfolio interactif avec des animations JS pour cacher les cartes au trésor.</p>
+                    <p>Un portfolio interactif avec des animations JS pour cacher les cartes au trésor. Ajoute du piquant !</p>
                 </div>
-                <!-- Exemple de projet 3 -->
+                <!-- Projet 3 -->
                 <div class="project-card">
                     <img src="https://via.placeholder.com/300x200/2a5298/ffffff?text=Projet+3" alt="Aperçu Projet 3">
                     <h3>Île Perdue</h3>
-                    <p>Une landing page responsive, optimisée pour mobiles et tablettes.</p>
+                    <p>Une landing page responsive, optimisée pour mobiles et tablettes. Parfait pour explorer en solo.</p>
                 </div>
+                <!-- Ajoute plus de cards ici si besoin -->
             </div>
         </section>
 
         <section id="contact" class="projects">
             <h2>Contact</h2>
-            <p style="text-align: center;">Envoyez un message au capitaine : <a href="mailto:contact@polieder.com">contact@polieder.com</a></p>
+            <p>Envoyez un message au capitaine : <a href="mailto:contact@polieder.com">contact@polieder.com</a> | Suivez-moi sur <a href="https://github.com/pirate">GitHub</a>.</p>
         </section>
     </main>
 
     <!-- Pied de page -->
     <footer>
-        <p>&copy; 2025 Polieder. Tous droits réservés. | <a href="mailto:contact@polieder.com" style="color: #ff6b6b;">Contact</a> | <a href="#" style="color: #ff6b6b;">GitHub</a></p>
+        <p>&copy; 2025 Polieder. Tous droits réservés. | <a href="mailto:contact@polieder.com">Contact</a> | <a href="https://github.com/pirate/polieder-site">GitHub Repo</a></p>
     </footer>
 
     <script>
-        // Petit JS pour le bouton CTA : scroll vers projets
+        // JS pour le bouton CTA : scroll fluide vers projets
         document.querySelector('.cta-button').addEventListener('click', function() {
             document.querySelector('#projet').scrollIntoView({ behavior: 'smooth' });
         });
+
+        // Bonus : Menu hamburger pour mobile (optionnel, active si besoin)
+        // Ajoute un bouton hamburger dans .navbar si tu veux, et ce code pour toggle .nav-links
     </script>
 </body>
 </html>
